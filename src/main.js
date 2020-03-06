@@ -1,9 +1,12 @@
 import Vue from "vue";
+import "./custom.scss";
 import App from "./App.vue";
 import router from "./router";
+import BootstrapVue from "bootstrap-vue";
 
-Vue.config.productionTip = false;
-
+Vue.config.productionTip = false
+require("./components/Global");
+Vue.use(BootstrapVue);
 new Vue({
   router,
   render: h => h(App)
