@@ -1,8 +1,8 @@
 <template>
-  <div id="app">
-    <div class="bakcgroundImg"></div>
+  <div id="app" >
+    <div class="blur-bg"></div>
     <cstm-navbar></cstm-navbar>
-    <router-view class="content" />
+    <router-view />
   </div>
 </template>
 <script>
@@ -12,22 +12,19 @@ export default {
 </script>
 
 <style>
-.bakcgroundImg {
+.blur-bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
   background: url("assets/background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.content {
- position: fixed;
-
+  z-index: -1;
 }
 
 body,

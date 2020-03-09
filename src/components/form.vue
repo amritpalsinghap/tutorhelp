@@ -1,5 +1,5 @@
 <template>
-  <div id="formsection">
+  <div >
     <b-form @submit="onSubmit" @reset="onReset" v-if="show" id="form">
       <b-form-group
         id="input-group-1"
@@ -102,9 +102,9 @@ export default {
   background-color: #7ed6f8;
   border-radius: 20px;
 
-  min-width: 200px;
+  min-width: 25%;
   padding: 40px;
-  margin:  auto;
+  margin: auto;
 
   -webkit-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
@@ -112,9 +112,5 @@ export default {
 
   display: inline-block;
 }
-#formsection {
-  align: center;
-  
- 
-}
+
 </style>

@@ -1,14 +1,16 @@
 <template>
   <div>
-    <b-container>
-      <b-row id="popupsection">
+    <b-container fluid="md">
+      <b-row id="popupsection" class="justify-content-center align-items-center">
         <b-col cols="6">
-          <div id="row-2">
-            <img src="../assets/flyerPic.png" width="300px" height="700px" />
-          </div>
+          <b-row align-h="center">
+            <img src="../assets/flyerPic.png" id="img-section" />
+          </b-row>
         </b-col>
         <b-col cols="6">
-          <cstmForm></cstmForm>
+          <b-row align-h="center">
+            <cstmForm></cstmForm>
+          </b-row>
         </b-col>
       </b-row>
     </b-container>
@@ -23,8 +25,15 @@ export default {
   }
 };
 </script>
-<style >
+<style>
+#img-section {
+  width: 400px;
+  height: 700px;
+  
+}
 #popupsection {
-  background-color: aqua;
+  margin-top: 10%;
+  background-color: rgba(81, 207, 245, 0.5);
+  border-radius: 40px;
 }
 </style>
