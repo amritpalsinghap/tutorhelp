@@ -1,6 +1,12 @@
 <template>
-  <div >
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show" id="form">
+  <div>
+    <b-form
+      @submit.prevent="onSubmit"
+      @reset="onReset"
+      v-if="show"
+      id="form"
+      enctype="multipart/form-data"
+    >
       <b-form-group
         id="input-group-1"
         label="Email address"
@@ -9,7 +15,7 @@
       >
         <b-form-input
           id="input-1"
-          v-model="form.email"
+          v-model="form.emailAddress"
           type="email"
           required
           placeholder="Enter Email address"
@@ -27,8 +33,8 @@
       <b-form-group id="input-group-3" label="Subject:" label-for="input-3">
         <b-form-select
           id="input-3"
-          v-model="form.subject"
-          :options="subjects"
+          v-model="form.subjects"
+          :options="subjectList"
           required
           placeholder="Select a Subject"
         ></b-form-select>
@@ -55,6 +61,7 @@
           drop-placeholder="Drop it here..."
           placeholder="Choose a file or zip folder"
         ></b-form-file>
+        <b-button @click="clearFile">Delete the file</b-button>
       </b-form-group>
       <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
@@ -62,19 +69,41 @@
   </div>
 </template>
 <script>
+import axios from "axios";
 export default {
   data() {
     return {
       docs: null,
-      form: { email: "", fullName: "", subject: "", description: "" },
+      form: {
+        emailAddress: "",
+        fullName: "",
+        subjects: "",
+        description: ""
+      },
       show: true,
-      subjects: ["C#", "Java"]
+      subjectList: ["C#", "Java"]
     };
   },
   methods: {
-    onSubmit(evt) {
+    async onSubmit(evt) {
       evt.preventDefault();
-      alert(JSON.stringify(this.form));
+      try {
+        const formData = new FormData();
+        if (this.docs != null) {
+          console.log(this.docs);
+          formData.append("docs", this.docs, this.docs.name);
+
+          this.form["docs"] = formData;
+          console.log(this.form);
+        }
+        await axios.post("http://localhost:3000/", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data"
+          }
+        });
+      } catch (err) {
+        console.log(err);
+      }
     },
     onReset(evt) {
       evt.preventDefault();
@@ -88,6 +117,10 @@ export default {
       this.$nextTick(() => {
         this.show = true;
       });
+    },
+    clearFile() {
+      this.docs = null;
+      delete this.form.docs;
     }
   }
 };
@@ -112,5 +145,4 @@ export default {
 
   display: inline-block;
 }
-
 </style>
