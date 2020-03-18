@@ -24,9 +24,7 @@ app.post('/', (req, res) => {
     // let docs = req.body.docs;
     // clientObj = new Client.Client(emailAddress, fullName, subjects, description, docs)
     // let clientinfo = clientObj.getClientInfo();
-    // console.log(clientinfo);
-    
-    res.send(clientinfo);
+    res.send(req.body);
 })
 
 
