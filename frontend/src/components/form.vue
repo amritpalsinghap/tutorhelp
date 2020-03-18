@@ -88,19 +88,11 @@ export default {
     async onSubmit(evt) {
       evt.preventDefault();
       try {
-        const formData = new FormData();
         if (this.docs != null) {
           console.log(this.docs);
-          formData.append("docs", this.docs, this.docs.name);
-
-          this.form["docs"] = formData;
-          console.log(this.form);
+          this.form["docs"] = this.docs;
         }
-        await axios.post("http://localhost:3000/", formData, {
-          headers: {
-            "Content-Type": "multipart/form-data"
-          }
-        });
+        await axios.post("http://localhost:3000/", this.form);
       } catch (err) {
         console.log(err);
       }
