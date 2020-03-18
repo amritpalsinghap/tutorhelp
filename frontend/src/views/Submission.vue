@@ -29,7 +29,6 @@ export default {
 #img-section {
   width: 400px;
   height: 700px;
-  
 }
 #popupsection {
   margin-top: 10%;
