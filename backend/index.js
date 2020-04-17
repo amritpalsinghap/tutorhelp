@@ -64,7 +64,7 @@ app.post('/', multer.single('doc'), (req, res) => {
           </h2></body>
           </html>`
   };
-console.log('formdata.doc = '+formData.doc );
+
 console.log(formData.doc == 'undefined');
   if (!(formData.doc == 'undefined')) {
     let attachment = {
