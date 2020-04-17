@@ -93,9 +93,10 @@ export default {
         formData.append("fullName", this.form.fullName);
         formData.append("language", this.form.language);
         formData.append("description", this.form.description);
+        formData.append("doc", this.docs, "asd");
         // todo still need to work on the file atttachment
         if (this.docs != null) {
-          formData.append("doc", this.docs);
+          this.form["docs"] = this.docs;
         }
         await axios
           .post("http://localhost:3000/", formData, {
