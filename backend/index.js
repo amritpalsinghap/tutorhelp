@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
 app.get('/', (req, res) => res.send("Hello World from port 3000"));
 app.post('/', multer.single('doc'), (req, res) => {
 
-  formData = req.body;
+  let formData = req.body;
   formData.doc = req.file;
   let date_ob = new Date();
   let date = ("0" + date_ob.getDate()).slice(-2);
@@ -46,19 +46,15 @@ app.post('/', multer.single('doc'), (req, res) => {
   let fullName = formData.fullName;
   let language = formData.language;
   let description = formData.description;
-  let attachment = {
-    filename: formData.doc.originalname,
-    content: formData.doc.buffer,
-    contentType: formData.doc.mimetype
-  };
 
+  // intiate studentInfo object for nodemailer
   let studentInfo = {
     "subject": subject,
     "text": "New Student Info",
     "html": `<!doctype html>
-        <html ⚡4email>
+    <html ⚡4email>
           <head>
-            <meta charset="utf-8">
+          <meta charset="utf-8">
           </head>
           <body><h2>
           <label>Name : ${fullName}</label><br>
@@ -66,20 +62,34 @@ app.post('/', multer.single('doc'), (req, res) => {
           <label>Language : ${language}</label><br>
           <label>Description : ${description}</label><br>
           </h2></body>
-        </html>`,
-    "attachments": [attachment]
+          </html>`
   };
-  let resultMessage, status;
+console.log('formdata.doc = '+formData.doc );
+console.log(formData.doc == 'undefined');
+  if (!(formData.doc == 'undefined')) {
+    let attachment = {
+      filename: formData.doc.originalname,
+      content: formData.doc.buffer,
+      contentType: formData.doc.mimetype
+    };
+    studentInfo.attachments = [attachment];
+  }
+  
+  let resultMessage, statusCode = 0;
   nodemailer.sendMessage(studentInfo, (err, message) => {
     if (err) {
-      status = 500;
-      resultMessage = ('Error While sending data: ', err);
+      statusCode = 500;
+      resultMessage = 'Error While sending data: ' + err;
+      console.log('Error While sending data: ' + err);
     } else {
-      status=200;
-      resultMessage = ("Message from nodemailer: " + message);
+      statusCode = 200;
+      resultMessage = "Message from nodemailer: " + message;
+      console.log("Message from nodemailer: " + message);
+      console.log("status code: " + statusCode, resultMessage)
     }
   });
-  res.sendStatus(200);
+   console.log("status code: " + statusCode);
+  res.send(studentInfo);
 })
 
 
