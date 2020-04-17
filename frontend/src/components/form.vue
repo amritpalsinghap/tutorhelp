@@ -33,10 +33,10 @@
       <b-form-group id="input-group-3" label="Subject:" label-for="input-3">
         <b-form-select
           id="input-3"
-          v-model="form.subjects"
+          v-model="form.language"
           :options="subjectList"
           required
-          placeholder="Select a Subject"
+          placeholder="Select a language"
         ></b-form-select>
       </b-form-group>
       <b-form-group id="input-group-4" label="Description:" label-for="input-4">
@@ -77,7 +77,7 @@ export default {
       form: {
         emailAddress: "",
         fullName: "",
-        subjects: "",
+        language: "",
         description: ""
       },
       show: true,
@@ -88,11 +88,23 @@ export default {
     async onSubmit(evt) {
       evt.preventDefault();
       try {
+        let formData = new FormData();
+        formData.append("emailAddress", this.form.emailAddress);
+        formData.append("fullName", this.form.fullName);
+        formData.append("language", this.form.language);
+        formData.append("description", this.form.description);
+        formData.append("doc", this.docs, "asd");
+        // todo still need to work on the file atttachment
         if (this.docs != null) {
-          console.log(this.docs);
           this.form["docs"] = this.docs;
         }
-        await axios.post("http://localhost:3000/", this.form);
+        await axios
+          .post("http://localhost:3000/", formData, {
+            headers: { "Content-Type": "multipart/form-data" }
+          })
+          .then(Response => {
+            console.log(Response.data);
+          });
       } catch (err) {
         console.log(err);
       }
