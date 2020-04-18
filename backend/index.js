@@ -64,8 +64,6 @@ app.post('/', multer.single('doc'), (req, res) => {
           </h2></body>
           </html>`
   };
-
-console.log(formData.doc == 'undefined');
   if (!(formData.doc == 'undefined')) {
     let attachment = {
       filename: formData.doc.originalname,
@@ -74,22 +72,18 @@ console.log(formData.doc == 'undefined');
     };
     studentInfo.attachments = [attachment];
   }
-  
-  let resultMessage, statusCode = 0;
+
+  var resultMessage, statusCode = 0;
   nodemailer.sendMessage(studentInfo, (err, message) => {
     if (err) {
       statusCode = 500;
       resultMessage = 'Error While sending data: ' + err;
-      console.log('Error While sending data: ' + err);
     } else {
       statusCode = 200;
-      resultMessage = "Message from nodemailer: " + message;
-      console.log("Message from nodemailer: " + message);
-      console.log("status code: " + statusCode, resultMessage)
+      resultMessage = "Email sent Successfully: " + message;
     }
+    res.status(statusCode).send(resultMessage);
   });
-   console.log("status code: " + statusCode);
-  res.send(studentInfo);
 })
 
 
