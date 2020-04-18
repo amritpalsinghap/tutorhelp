@@ -7,12 +7,7 @@
       id="form"
       enctype="multipart/form-data"
     >
-      <b-form-group
-        id="input-group-1"
-        label="Email address"
-        label-for="input-1"
-        description="The information you provide will stay private"
-      >
+      <b-form-group id="input-group-1" label="Email address" label-for="input-1">
         <b-form-input
           id="input-1"
           v-model="form.emailAddress"
@@ -31,13 +26,7 @@
         ></b-form-input>
       </b-form-group>
       <b-form-group id="input-group-3" label="Subject:" label-for="input-3">
-        <b-form-select
-          id="input-3"
-          v-model="form.language"
-          :options="subjectList"
-          required
-          placeholder="Select a language"
-        ></b-form-select>
+        <b-form-select id="input-3" v-model="selectedLanguage" :options="options" required></b-form-select>
       </b-form-group>
       <b-form-group id="input-group-4" label="Description:" label-for="input-4">
         <b-form-textarea
@@ -65,6 +54,8 @@
       </b-form-group>
       <b-button type="submit" variant="primary">Submit</b-button>
       <b-button type="reset" variant="danger">Reset</b-button>
+      <br />
+      <label>The information you provide will stay private</label>
     </b-form>
   </div>
 </template>
@@ -73,15 +64,19 @@ import axios from "axios";
 export default {
   data() {
     return {
+      selectedLanguage: null,
       docs: null,
       form: {
         emailAddress: "",
         fullName: "",
-        language: "",
         description: ""
       },
       show: true,
-      subjectList: ["C#", "Java"]
+      options: [
+        { value: null, text: "Select a language " },
+        { value: "C#", text: "C#" },
+        { value: "Java", text: "Java" }
+      ]
     };
   },
   methods: {
@@ -91,9 +86,9 @@ export default {
         let formData = new FormData();
         formData.append("emailAddress", this.form.emailAddress);
         formData.append("fullName", this.form.fullName);
-        formData.append("language", this.form.language);
+        formData.append("language", this.selectedLanguage);
         formData.append("description", this.form.description);
-        formData.append("doc", this.docs, "asd");
+        formData.append("doc", this.docs);
         // todo still need to work on the file atttachment
         if (this.docs != null) {
           this.form["docs"] = this.docs;
