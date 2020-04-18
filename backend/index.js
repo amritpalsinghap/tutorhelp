@@ -65,8 +65,7 @@ app.post('/', multer.single('doc'), (req, res) => {
           </html>`
   };
 
-
-
+  //check if the user attach any file 
   if (!(typeof formData.doc == 'undefined')) {
     let attachment = {
       filename: formData.doc.originalname,
@@ -76,8 +75,9 @@ app.post('/', multer.single('doc'), (req, res) => {
     studentInfo.attachments = [attachment];
   }
 
-  var resultMessage, statusCode = 0;
+  // call nodemailer to send email
   nodemailer.sendMessage(studentInfo, (err, message) => {
+    let resultMessage, statusCode = 0;
     if (err) {
       statusCode = 500;
       resultMessage = 'Error While sending data: ' + err;
@@ -88,8 +88,6 @@ app.post('/', multer.single('doc'), (req, res) => {
     res.status(statusCode).send(resultMessage);
   });
 })
-
-
 
 //server runing on port
 app.listen(node_port, () => console.log('app listening on port 3000'));
