@@ -1,5 +1,5 @@
 <template>
-  <div id="app" >
+  <div id="app">
     <div class="blur-bg"></div>
     <cstm-navbar></cstm-navbar>
     <router-view />
@@ -31,5 +31,6 @@ body,
 html {
   height: 100%;
   margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", "Arial", "sans-serif";
 }
 </style>
