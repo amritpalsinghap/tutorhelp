@@ -1,13 +1,19 @@
 <template>
   <div>
-    <b-container fluid="md">
-      <b-row id="popupsection" class="justify-content-center align-items-center">
-        <b-col cols="6">
+    <b-container fluid="sm">
+      <b-row
+        id="popupsection"
+        class="justify-content-center align-items-center"
+      >
+        <b-col cols="sm-6">
           <b-row align-h="center">
-            <img src="../assets/flyerPic.png" id="img-section" />
+            <b-img
+              :src="require('../assets/flyerPic.png')"
+              class="img-section rounded mx-auto d-block"
+            ></b-img>
           </b-row>
         </b-col>
-        <b-col cols="6">
+        <b-col cols="sm-6">
           <b-row align-h="center">
             <cstmForm></cstmForm>
           </b-row>
@@ -25,14 +31,19 @@ export default {
   }
 };
 </script>
-<style>
-#img-section {
-  width: 400px;
-  height: 700px;
+<style lang="scss">
+.img-section {
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  max-height: 400px;
 }
 #popupsection {
   margin-top: 10%;
-  background-color: rgba(81, 207, 245, 0.5);
-  border-radius: 40px;
+  background-color: #1493c2;
+  border-radius: 10px;
+}
+.container-sm {
+  max-width: 800px;
 }
 </style>
