@@ -1,4 +1,11 @@
 @import '../node_modules/bootstrap/scss/bootstrap';
 @import '../node_modules/bootstrap-vue/src/index.scss';
+@import "../node_modules/bootstrap/scss/_functions";
+@import "../node_modules/bootstrap/scss/_variables";
+@import "../node_modules/bootstrap/scss/mixins/_breakpoints.scss";
 
-
+@include media-breakpoint-down(md) {
+    #popupsection {
+      background-color: #ff0000;
+    }
+  }
