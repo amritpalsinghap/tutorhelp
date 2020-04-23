@@ -1,48 +1,48 @@
 <template>
-  <div>
-    <b-form
-      @submit.prevent="onSubmit"
-      @reset="onReset"
-      v-if="show"
-      id="form"
-      enctype="multipart/form-data"
-    >
-      <b-form-group id="input-group-1" label="Email address" label-for="input-1">
+  <div class="formParentClass">
+    <b-form @submit.prevent="onSubmit" @reset="onReset" v-if="show" enctype="multipart/form-data">
+      <b-form-group id="input-group-1" label-for="input-1">
         <b-form-input
+          class="inputTextBox"
           id="input-1"
           v-model="form.emailAddress"
           type="email"
           required
-          placeholder="Enter Email address"
+          placeholder="Email address*"
         ></b-form-input>
       </b-form-group>
-      <b-form-group id="input-group-2" label="Full Name" label-for="input-2">
+      <b-form-group id="input-group-2" label-for="input-2">
         <b-form-input
           id="input-2"
           v-model="form.fullName"
           type="text"
           required
-          placeholder="Enter FullName"
+          placeholder="FullName*"
+          class="inputTextBox"
         ></b-form-input>
       </b-form-group>
-      <b-form-group id="input-group-3" label="Subject:" label-for="input-3">
-        <b-form-select id="input-3" v-model="selectedLanguage" :options="options" required></b-form-select>
+      <b-form-group id="input-group-3" label-for="input-3">
+        <b-form-select
+          id="input-3"
+          v-model="selectedLanguage"
+          :options="options"
+          required
+          class="inputTextBox"
+        ></b-form-select>
       </b-form-group>
-      <b-form-group id="input-group-4" label="Description:" label-for="input-4">
+      <b-form-group id="input-group-4" label-for="input-4">
         <b-form-textarea
+          class="inputTextBox"
           id="input-4"
           v-model="form.description"
           type="text"
           rows="5"
           required
-          placeholder="Please explain the problem and section where student need a help with it"
+          placeholder="Please explain the problem*"
         ></b-form-textarea>
       </b-form-group>
-      <b-form-group
-        id="input-group-5"
-        label="Please attach supportive document (if any)"
-        label-for="input-5"
-      >
+      <b-form-group id="input-group-5" label-for="input-5">
+        <!-- todo this tag doesn't picking up the inputTextBox class -->
         <b-form-file
           id="input-5"
           v-model="docs"
@@ -50,12 +50,12 @@
           drop-placeholder="Drop it here..."
           placeholder="Choose a file or zip folder"
         ></b-form-file>
-        <b-button @click="clearFile">Delete the file</b-button>
+        <b-button @click="clearFile" class="cstm-btn">Remove</b-button>
       </b-form-group>
-      <b-button type="submit" variant="primary">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
+      <b-button type="submit" variant="primary" class="cstm-btn">Submit</b-button>
+      <b-button type="reset" variant="danger" class="cstm-btn">Reset</b-button>
       <br />
-      <label>The information you provide will stay private</label>
+      <label class="info">The information you provide will stay private</label>
     </b-form>
   </div>
 </template>
@@ -73,7 +73,7 @@ export default {
       },
       show: true,
       options: [
-        { value: null, text: "Select a language " },
+        { value: null, text: "Select a language*" },
         { value: "C#", text: "C#" },
         { value: "Java", text: "Java" }
       ]
@@ -89,7 +89,7 @@ export default {
         formData.append("language", this.selectedLanguage);
         formData.append("description", this.form.description);
         formData.append("doc", this.docs);
-        // todo still need to work on the file atttachment
+        // todo still need to work on the file attachment
         if (this.docs != null) {
           this.form["docs"] = this.docs;
         }
@@ -124,24 +124,33 @@ export default {
   }
 };
 </script>
-<style  lang="scss" scoped>
-* {
-  box-sizing: border-box;
-  font-family: "Merriweather Sans", sans-serif;
-}
-#form {
-  color: rgb(0, 0, 0);
-  background-color: #7ed6f8;
-  border-radius: 20px;
+<style lang="scss" scoped>
+.formParentClass {
+  width: auto;
+  background-color: #17a2b8;
+  border-radius: 0px 10px 10px 0px;
 
-  min-width: 25%;
   padding: 40px;
   margin: auto;
-
-  -webkit-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: -1px 3px 18px 0px rgba(0, 0, 0, 0.75);
-
+  height: auto;
   display: inline-block;
+}
+.inputTextBox {
+  display: block;
+  width: 100%;
+  background: #f2f2f2;
+  //color attribute added only for the select tag option, the text color wasn't picking up the inherit option.
+  color: #757474;
+  border-radius: 3px;
+  font-size: 15px;
+  line-height: 1.2;
+}
+.info {
+  color: #f7ecec;
+  border-radius: 2px;
+}
+.cstm-btn {
+  margin-top: 5px;
+  margin-right: 10px;
 }
 </style>
