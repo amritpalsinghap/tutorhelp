@@ -32,7 +32,14 @@ export default {
 };
 </script>
 <style lang="scss">
+@import "src/custom.scss";
 .img-section {
+  @include media-breakpoint-down(md) {
+    width: auto;
+    height: auto;
+    max-width: 80px;
+    max-height: 120px;
+  }
   width: auto;
   height: auto;
   max-width: 300px;
@@ -45,5 +52,14 @@ export default {
 }
 .container-sm {
   max-width: 800px;
+}
+
+@include media-breakpoint-down(md) {
+  .img-section {
+    width: auto;
+    height: auto;
+    max-width: 80px;
+    max-height: 120px;
+  }
 }
 </style>
