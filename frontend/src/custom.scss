@@ -4,8 +4,3 @@
 @import "../node_modules/bootstrap/scss/_variables";
 @import "../node_modules/bootstrap/scss/mixins/_breakpoints.scss";
 
-@include media-breakpoint-down(md) {
-    #popupsection {
-      background-color: #ff0000;
-    }
-  }

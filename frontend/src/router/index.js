@@ -24,7 +24,6 @@ const routes = [
     path: "/submitRequest",
     name: "Submission",
     component: Submission
-
   }
 ];
 
