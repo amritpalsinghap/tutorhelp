@@ -128,7 +128,7 @@ export default {
 .formParentClass {
   width: auto;
   background-color: #17a2b8;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 0px 10px 10px 0px;
 
   padding: 40px;
   margin: auto;
