@@ -13,8 +13,6 @@ export default {
 <style>
 body,
 html {
-  height: 100%;
-  margin: 0;
   font-family: "Franklin Gothic Medium", "Arial Narrow", "Arial", "sans-serif";
 }
 </style>
