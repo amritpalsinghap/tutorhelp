@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="225mm"
+   height="35mm"
+   viewBox="0 0 225 35"
+   version="1.1"
+   id="svg2429"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="Logo.svg">
+  <defs
+     id="defs2423">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="156.64111 : -58.162548 : 1"
+       inkscape:vp_y="0 : 111.39877 : 0"
+       inkscape:vp_z="258.92353 : -58.162548 : 1"
+       inkscape:persp3d-origin="207.78232 : -63.676788 : 1"
+       id="perspective2437" />
+    <rect
+       x="-52.160713"
+       y="72.571426"
+       width="358.32144"
+       height="65.76786"
+       id="rect2433" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="14.792392"
+     inkscape:cy="627.59122"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:lockguides="false"
+     showborder="true"
+     inkscape:window-width="1858"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata2426">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       transform="translate(-28.982143,-47.502975)"
+       id="g846">
+      <rect
+         ry="13.037466"
+         y="44.761303"
+         x="-21.585047"
+         height="39.1124"
+         width="265.245"
+         id="rect858"
+         style="fill:#00c1ff;fill-opacity:1;stroke:#000000;stroke-width:1.18941;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;paint-order:markers fill stroke"
+         transform="matrix(0.84075458,0,0,0.84075458,47.629871,10.369705)" />
+      <g
+         id="g2500"
+         transform="matrix(0.86882923,0,0,0.86882923,35.172413,-84.004917)">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1459px;line-height:1.25;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';stroke-width:0.264901"
+           x="3.1156666"
+           y="180.50055"
+           id="text2455"><tspan
+             sodipodi:role="line"
+             id="tspan2453"
+             x="3.1156666"
+             y="180.50055"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:38.1459px;font-family:Ebrima;-inkscape-font-specification:'Ebrima Bold';stroke-width:0.264901">People Tutor </tspan></text>
+        <text
+           id="text854"
+           y="80.72673"
+           x="5.8385868"
+           style="font-weight:bold;font-size:18.8818px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';stroke-width:0.314697"
+           xml:space="preserve"><tspan
+             style="stroke-width:0.314697"
+             y="80.72673"
+             x="5.8385868"
+             id="tspan852"
+             sodipodi:role="line" /><tspan
+             id="tspan856"
+             style="stroke-width:0.314697"
+             y="104.32898"
+             x="5.8385868"
+             sodipodi:role="line" /></text>
+      </g>
+    </g>
+  </g>
+</svg>
