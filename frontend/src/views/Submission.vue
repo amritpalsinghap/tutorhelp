@@ -5,7 +5,7 @@
         id="popupsection"
         class="justify-content-center align-items-center"
       >
-        <b-col cols="sm-6">
+        <b-col cols="sm-6" class="leftCol">
           <b-row align-h="center">
             <b-img
               :src="require('../assets/flyerPic.png')"
@@ -54,12 +54,10 @@ export default {
   max-width: 800px;
 }
 
-@include media-breakpoint-down(md) {
-  .img-section {
-    width: auto;
-    height: auto;
-    max-width: 80px;
-    max-height: 120px;
-  }
-}
+// @include media-breakpoint-down(md) {
+//   .leftCol{
+//     display: none;
+//   }
+
+// }
 </style>
