@@ -1,6 +1,7 @@
 <template>
   <div>
     <b-navbar class="navArea" toggleable="md" type="dark" variant="info">
+      <cstmGoBackBtn></cstmGoBackBtn>
       <b-navbar-brand to="/" class="logobtn">
         <img
           src="../../assets/flyerPic.png"
@@ -8,12 +9,15 @@
           height="40px"
           class="d-inline-block align-top"
           alt="TutorHelp"
-        />PeopleTutor
+        />
+        <img src="../../assets/Logo.svg" class="logoSize" />
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item to="/submitRequest" class="btn btn-2">SubmitProblem</b-nav-item>
+          <b-nav-item to="/submitRequest" class="btn btn-2"
+            >SubmitProblem</b-nav-item
+          >
           <b-nav-item to="/about" class="btn btn-2">About us</b-nav-item>
         </b-navbar-nav>
       </b-collapse>
@@ -21,8 +25,12 @@
   </div>
 </template>
 <script>
+import cstmGoBackBtn from "@/components/Global/goBack";
 export default {
-  name: "NavBar"
+  name: "NavBar",
+  components: {
+    cstmGoBackBtn,
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -33,6 +41,9 @@ export default {
     padding-right: 15rem;
     height: 4rem;
   }
+}
+.logoSize {
+  width: 9rem;
 }
 .navbar-dark .navbar-nav .nav-link {
   color: rgb(255, 255, 255);
