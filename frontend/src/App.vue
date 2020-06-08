@@ -10,7 +10,7 @@ export default {
 };
 </script>
 
-<style>
+<style style lang="scss" scoped>
 body,
 html {
   font-family: "Franklin Gothic Medium", "Arial Narrow", "Arial", "sans-serif";
