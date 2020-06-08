@@ -7,7 +7,7 @@
       ></b-carousel-slide>
 
       <!-- Slides with custom text -->
-      <b-carousel-slide img-src="../assets/backgroundImageTeaching.svg">
+      <b-carousel-slide img-src="../assets/backgroundImageTeaching.png">
         <template>
           <div id="teachingSection">
             <router-link to="/submitRequest">
