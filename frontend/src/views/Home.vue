@@ -1,19 +1,39 @@
 <template>
-  <div class="home">
-    <FrontPage msg="Welcome to Your Vue.js App" />
+  <div>
+    <div class="imageslider">
+      <cstmimageslider></cstmimageslider>
+    </div>
+    <div class="imageslidervertical">
+      <cstmimageslidervertical></cstmimageslidervertical>
+    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import FrontPage from "@/components/FrontPage.vue";
+import cstmimageslider from "@/components/ImageSlider";
+import cstmimageslidervertical from "@/components/ImageSliderVertical";
 export default {
   name: "Home",
   components: {
-    FrontPage
-  }
+    cstmimageslider,
+    cstmimageslidervertical,
+  },
 };
 </script>
 <style lang="scss" scoped>
+@import "src/custom.scss";
 
+.imageslidervertical {
+  display: none;
+}
+
+@include media-breakpoint-down(md) {
+  .imageslider {
+    display: none;
+  }
+  .imageslidervertical {
+    display: block;
+  }
+}
 </style>
