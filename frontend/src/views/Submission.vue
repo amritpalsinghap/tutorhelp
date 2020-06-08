@@ -23,15 +23,15 @@
   </div>
 </template>
 <script>
-import cstmForm from "@/components/form";
+import cstmForm from "@/components/Form";
 export default {
   name: "Submission",
   components: {
-    cstmForm
-  }
+    cstmForm,
+  },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import "src/custom.scss";
 .img-section {
   @include media-breakpoint-down(md) {
@@ -54,10 +54,9 @@ export default {
   max-width: 800px;
 }
 
-// @include media-breakpoint-down(md) {
-//   .leftCol{
-//     display: none;
-//   }
-
-// }
+@include media-breakpoint-down(md) {
+  .leftCol {
+    display: none;
+  }
+}
 </style>

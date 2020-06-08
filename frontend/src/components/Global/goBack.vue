@@ -11,10 +11,10 @@
 </template>
 <script>
 export default {
-  name: "goBack",
+  name: "GoBack",
   methods: {
     goBack() {
-      //check if the current route.path is home/root >if it is then stop the router from going back, not sure if the function should be added
+      //check if the current route.path is home/root >if it is, then stop the router from going back, not sure if the function should be added
       // if( (this.$route.path ) = "/")
       return this.$router.go(-1);
     },

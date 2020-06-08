@@ -25,7 +25,7 @@
   </div>
 </template>
 <script>
-import cstmGoBackBtn from "@/components/Global/goBack";
+import cstmGoBackBtn from "@/components/Global/GoBack";
 export default {
   name: "NavBar",
   components: {
