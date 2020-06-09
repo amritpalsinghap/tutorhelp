@@ -51,6 +51,7 @@ export default {
   border-radius: 10px;
 }
 .container-sm {
+  padding-top: 40px;
   max-width: 800px;
 }
 
