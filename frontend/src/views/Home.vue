@@ -33,6 +33,7 @@ export default {
     display: none;
   }
   .imageslidervertical {
+    padding-top: 60px;
     display: block;
   }
 }
