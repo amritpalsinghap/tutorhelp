@@ -4,13 +4,10 @@
       <cstmGoBackBtn></cstmGoBackBtn>
       <b-navbar-brand to="/" class="logobtn">
         <img
-          src="../../assets/flyerPic.png"
-          width="30px"
-          height="40px"
-          class="d-inline-block align-top"
-          alt="TutorHelp"
+          src="../../assets/Logo.svg"
+          class="logoSize d-inline-block align-top"
+          alt="PeopleTutor"
         />
-        <img src="../../assets/Logo.svg" class="logoSize" />
       </b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
@@ -35,6 +32,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "src/custom.scss";
+
+@include media-breakpoint-down(md) {
+  .navArea {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  
+  }
+}
 @include media-breakpoint-up(lg) {
   .navArea {
     padding-left: 15rem;
@@ -43,16 +49,13 @@ export default {
   }
 }
 .logoSize {
-  width: 9rem;
+  width: 10rem;
 }
 .navbar-dark .navbar-nav .nav-link {
   color: rgb(255, 255, 255);
 }
 .navbar-dark .navbar-nav .nav-link:hover {
   color: rgb(255, 255, 255);
-}
-.logobtn:hover:after {
-  font-size: 1.5rem;
 }
 .btn {
   font-weight: 600;
