@@ -1,6 +1,11 @@
 <template>
   <div class="formParentClass">
-    <b-form @submit.prevent="onSubmit" @reset="onReset" v-if="show" enctype="multipart/form-data">
+    <b-form
+      @submit.prevent="onSubmit"
+      @reset="onReset"
+      v-if="show"
+      enctype="multipart/form-data"
+    >
       <b-form-group id="input-group-1" label-for="input-1">
         <b-form-input
           class="inputTextBox"
@@ -42,7 +47,6 @@
         ></b-form-textarea>
       </b-form-group>
       <b-form-group id="input-group-5" label-for="input-5">
-        <!-- todo this tag doesn't picking up the inputTextBox class -->
         <b-form-file
           id="input-5"
           v-model="docs"
@@ -52,7 +56,9 @@
         ></b-form-file>
         <b-button @click="clearFile" class="cstm-btn">Remove</b-button>
       </b-form-group>
-      <b-button type="submit" variant="primary" class="cstm-btn">Submit</b-button>
+      <b-button type="submit" variant="primary" class="cstm-btn"
+        >Submit</b-button
+      >
       <b-button type="reset" variant="danger" class="cstm-btn">Reset</b-button>
       <br />
       <label class="info">The information you provide will stay private</label>
@@ -69,14 +75,14 @@ export default {
       form: {
         emailAddress: "",
         fullName: "",
-        description: ""
+        description: "",
       },
       show: true,
       options: [
         { value: null, text: "Select a language*" },
         { value: "C#", text: "C#" },
-        { value: "Java", text: "Java" }
-      ]
+        { value: "Java", text: "Java" },
+      ],
     };
   },
   methods: {
@@ -89,15 +95,14 @@ export default {
         formData.append("language", this.selectedLanguage);
         formData.append("description", this.form.description);
         formData.append("doc", this.docs);
-        // todo still need to work on the file attachment
         if (this.docs != null) {
           this.form["docs"] = this.docs;
         }
         await axios
           .post("http://localhost:3000/", formData, {
-            headers: { "Content-Type": "multipart/form-data" }
+            headers: { "Content-Type": "multipart/form-data" },
           })
-          .then(Response => {
+          .then((Response) => {
             console.log(Response.data);
           });
       } catch (err) {
@@ -120,8 +125,8 @@ export default {
     clearFile() {
       this.docs = null;
       delete this.form.docs;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
