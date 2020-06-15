@@ -1,5 +1,8 @@
 <template>
   <div class="pagesliderVertical">
+    <div class="mousescroller">
+      <!-- <cstm-mouserscroller></cstm-mouserscroller> -->
+    </div>
     <div class="page1"></div>
     <div class="page2">
       <div id="teachingSection">
@@ -26,7 +29,7 @@ export default {};
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 730px;
+  height: 730px;            
 }
 .page2 {
   background: url("../assets/backgroundImageTeachingVertical.png") no-repeat;
