@@ -9,20 +9,25 @@
       <!-- Slides with custom text -->
       <b-carousel-slide img-src="../assets/backgroundImageTeaching.png">
         <template>
-          <div id="teachingSection">
-            <router-link to="/submitRequest">
-              <button class="btn SubmitProblemButton">
-                <img
-                  src="../assets/submitProblemButton.svg"
-                  alt="SubmitProblemButton"
-                />
-              </button>
-            </router-link>
+          <div class="teachingSection">
+            <div class="SubmitProblemButton">
+              <router-link to="/submitRequest">
+              <p>
+                
+              </p>
+                <button class="btn ">
+                  <img
+                    src="../assets/submitProblemButton.svg"
+                    alt="SubmitProblemButton"
+                  />
+                </button>
+              </router-link>
+            </div>
           </div>
         </template>
       </b-carousel-slide>
-      <b-carousel-slide img-src="../assets/backgroundImageAboutUs.svg"
-        ><p></p
+      <b-carousel-slide
+        img-src="../assets/backgroundImageAboutUs.svg"
       ></b-carousel-slide>
     </b-carousel>
   </div>
@@ -36,12 +41,24 @@ export default {
 <style lang="scss">
 @import "src/custom.scss";
 
-.carousel-caption {
-  top: 10rem;
-  bottom: auto;
+.teachingSection {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-style: solid;
+  border-width: 2px 0px;
+  border-color: rgba(255, 255, 255, 1);
+  position: absolute;
+  width: 100%;
+  padding: 20px;
+  margin: -400px 0px;
 }
 .SubmitProblemButton {
-  width: 180px;
-  height: 90px;
+  z-index: 2;
+  position: initial;
+  text-align: center;
+}
+.carousel-control-prev,
+.carousel-control-next {
+  background: rgba(132, 235, 253, 0.3);
+  width: 10%;
 }
 </style>
