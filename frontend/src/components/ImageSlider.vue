@@ -1,20 +1,21 @@
 <template>
   <div class="imageSliderSection">
-    <b-carousel id="carousel-1" :interval="4000" controls indicators>
+    <b-carousel id="carousel-animation" :interval="50000" controls indicators>
       <!-- Text slides with image -->
       <b-carousel-slide
         img-src="../assets/backgroundImageLanguageList.svg"
       ></b-carousel-slide>
 
       <!-- Slides with custom text -->
-      <b-carousel-slide img-src="../assets/backgroundImageTeaching.png">
+      <b-carousel-slide img-src="../assets/backgroundImageTeaching.svg">
         <template>
           <div class="teachingSection">
+            <p class="problemTextSection">
+              Got a EXAM ! <br />
+              STUCK some where !
+            </p>
             <div class="SubmitProblemButton">
               <router-link to="/submitRequest">
-              <p>
-                
-              </p>
                 <button class="btn ">
                   <img
                     src="../assets/submitProblemButton.svg"
@@ -26,9 +27,21 @@
           </div>
         </template>
       </b-carousel-slide>
-      <b-carousel-slide
-        img-src="../assets/backgroundImageAboutUs.svg"
-      ></b-carousel-slide>
+      <b-carousel-slide img-src="../assets/backgroundImageAboutUs.svg">
+        <template>
+          <div class="AboutUsSection">
+            <p>
+              The Idea of teaching kids who really need help with their
+              acadamics came from analysing hardworking students, who wanted
+              more than what college provides, while maintaining their
+              work/study schedule. Had been in the same shoes, the CEO felt the
+              neccesity to find a way and provide FREE acadamic HELP. Our Tutors
+              are Gradutated from well established/known Colleges/Universities
+              with more than 3.5 GPA or Honor
+            </p>
+          </div>
+        </template>
+      </b-carousel-slide>
     </b-carousel>
   </div>
 </template>
@@ -39,23 +52,56 @@ export default {
 };
 </script>
 <style lang="scss">
+@import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
 @import "src/custom.scss";
 
-.teachingSection {
-  background-color: rgba(0, 0, 0, 0.4);
-  border-style: solid;
-  border-width: 2px 0px;
-  border-color: rgba(255, 255, 255, 1);
+.carousel-caption {
   position: absolute;
-  width: 100%;
-  padding: 20px;
-  margin: -400px 0px;
-}
-.SubmitProblemButton {
-  z-index: 2;
-  position: initial;
+  padding: 0px;
+  margin: 30% 0%;
+  z-index: 10;
+  color: #fff;
   text-align: center;
+  right: 10%;
+  bottom: 20px;
+  left: 10%;
 }
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  width: 150px;
+}
+
+.SubmitProblemButton {
+  position: absolute;
+  text-align: center;
+  padding: 10px 0px;
+  margin: 20% 40%;
+}
+.problemTextSection {
+  font-size: 3rem;
+  color: #e8e8e8;
+  font-family: "Walter Turncoat";
+  display: block;
+  width: 80%;
+  height: 80%;
+  min-height: auto;
+  margin: 30px auto 0 auto;
+  padding: 20px 30px;
+}
+.AboutUsSection {
+  font-size: 2rem;
+  color: #e8e8e8;
+  font-family: "Walter Turncoat";
+  display: block;
+  width: 80%;
+  height: 80%;
+  min-height: auto;
+  margin: 30px auto 0 auto;
+  padding: 20px 30px;
+}
+
 .carousel-control-prev,
 .carousel-control-next {
   background: rgba(132, 235, 253, 0.3);
