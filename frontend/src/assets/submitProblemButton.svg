@@ -1,18 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="33mm" height="17mm" version="1.1" viewBox="0 0 33 17" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
- <metadata>
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-    <dc:format>image/svg+xml</dc:format>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:title/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <text x="31.003265" y="25.123335" font-family="sans-serif" font-size="15.875px" font-weight="bold" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="31.003265" y="25.123335" stroke-width=".26458"/></text>
- <rect x="1.1815e-8" y="-3.3516e-9" width="33" height="17" ry="8.5" fill="#55caff" fill-rule="evenodd"/>
- <g transform="translate(.47972 .15139)" fill="#ffffff" font-family="sans-serif" font-size="5.6605px" font-weight="bold" stroke-width=".094342">
-  <text transform="scale(1.006 .99408)" x="6.3547282" y="7.9599519" style="line-height:1.25" xml:space="preserve"><tspan x="6.3547282" y="7.9599519" fill="#ffffff" stroke-width=".094342">Submit </tspan></text>
-  <text transform="scale(1.006 .99408)" x="4.8205447" y="13.040674" style="line-height:1.25" xml:space="preserve"><tspan x="4.8205447" y="13.040674" fill="#ffffff" stroke-width=".094342">Problem</tspan></text>
- </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:dc="http://purl.org/dc/elements/1.1/" 
+   xmlns:cc="http://creativecommons.org/ns#" 
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+   xmlns:svg="http://www.w3.org/2000/svg" 
+   xmlns="http://www.w3.org/2000/svg" 
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" 
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" inkscape:version="1.0 (4035a4fb49, 2020-05-01)" sodipodi:docname="submitProblemButton.svg" id="svg1308" viewBox="0 0 33 17" version="1.1" height="17mm" width="33mm">
+   <defs id="defs1312" />
+   <sodipodi:namedview inkscape:current-layer="svg1308" inkscape:window-maximized="1" inkscape:window-y="-8" inkscape:window-x="-8" inkscape:cy="39.711678" inkscape:cx="61.056507" inkscape:zoom="5.2395518" showgrid="false" id="namedview1310" inkscape:window-height="1057" inkscape:window-width="1858" inkscape:pageshadow="2" inkscape:pageopacity="0" guidetolerance="10" gridtolerance="10" objecttolerance="10" borderopacity="1" bordercolor="#666666" pagecolor="#ffffff" />
+   <metadata id="metadata1290">
+      <rdf:RDF>
+         <cc:Work rdf:about="">
+            <dc:format>image/svg+xml</dc:format>
+            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+            <dc:title />
+         </cc:Work>
+      </rdf:RDF>
+   </metadata>
+   <text id="text1294" xml:space="preserve" style="line-height:1.25" stroke-width=".26458" font-weight="bold" font-size="15.875px" font-family="sans-serif" y="25.123335" x="31.003265">
+      <tspan id="tspan1292" stroke-width=".26458" y="25.123335" x="31.003265" />
+   </text>
+   <rect id="rect1296" fill-rule="evenodd" fill="#55caff" ry="8.5" height="17" width="33" y="-3.3516e-9" x="1.1815e-8" />
+   <text transform="scale(1.0059776,0.9940579)" x="8.3629208" y="8.1124239" style="font-weight:bold;font-size:5.66063px;line-height:1.25;font-family:sans-serif;fill:#ffffff;stroke-width:1.00002" xml:space="preserve" id="text1300">
+      <tspan x="9.3629208" y="7.1124239" fill="#ffffff" stroke-width="0.0943441" id="tspan1298">Send </tspan>
+   </text>
+   <text transform="scale(1.0059776,0.99405791)" x="7.6180282" y="13.193259" style="font-weight:bold;font-size:5.66063px;line-height:1.25;font-family:sans-serif;fill:#ffffff;stroke-width:1.00002" xml:space="preserve" id="text1304">
+      <tspan x="8.8180282" y="13.193259" fill="#ffffff" stroke-width="0.0943441" id="tspan1302">Email</tspan>
+   </text>
 </svg>
