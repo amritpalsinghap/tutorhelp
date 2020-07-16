@@ -1,12 +1,12 @@
 <template>
   <div>
-    <button @click="goBack" class="btn goBackbtn">
+    <span @click="goBack" class="nav-link goBackbtn">
       <img
         src="../../assets/backButton.svg"
         class="goBackbtnImgSize"
         alt="BackButton"
       />
-    </button>
+    </span>
   </div>
 </template>
 <script>
