@@ -22,7 +22,19 @@
         </div>
       </div>
     </div>
-    <div class="page3"></div>
+    <div class="page3">
+      <div class="problemTextSection">
+        <p>
+          The Idea of teaching kids who really need help with their acadamics
+          came from analysing hardworking students, who wanted more than what
+          college provides, while maintaining their work/study schedule. Had
+          been in the same shoes, the CEO felt the neccesity to find a way and
+          provide FREE acadamic HELP. Our Tutors are Gradutated from well
+          established/known Colleges/Universities with more than 3.5 GPA or
+          Honor
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -54,7 +66,6 @@ export default {};
   position: absolute;
   text-align: center;
   padding: 10px 0px;
-  margin: 40% 60%;
 }
 .problemTextSection {
   font-size: 3rem;
@@ -64,7 +75,6 @@ export default {};
   width: 80%;
   height: 80%;
   min-height: auto;
-  margin: 30px auto 0 auto;
   padding: 20px 30px;
 }
 
