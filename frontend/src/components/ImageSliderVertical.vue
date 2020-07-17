@@ -68,7 +68,7 @@ export default {};
   padding: 10px 0px;
 }
 .problemTextSection {
-  font-size: 3rem;
+  font-size: 1rem;
   color: #e8e8e8;
   font-family: "Walter Turncoat";
   display: block;
