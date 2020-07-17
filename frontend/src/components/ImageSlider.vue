@@ -10,18 +10,16 @@
       <b-carousel-slide img-src="../assets/backgroundImageTeaching.svg">
         <template>
           <div class="teachingSection">
-            <p class="problemTextSection">
+            <p class="textSection">
               Got a EXAM ! <br />
               STUCK some where !
             </p>
             <div class="SubmitProblemButton">
-              <router-link to="/submitRequest">
-                <button class="btn ">
-                  <img
-                    src="../assets/submitProblemButton.svg"
-                    alt="SubmitProblemButton"
-                  />
-                </button>
+              <router-link to="/submitRequest" class="btn ">
+                <img
+                  src="../assets/submitProblemButton.svg"
+                  alt="SubmitProblemButton"
+                />
               </router-link>
             </div>
           </div>
@@ -29,16 +27,18 @@
       </b-carousel-slide>
       <b-carousel-slide img-src="../assets/backgroundImageAboutUs.svg">
         <template>
-          <div class="AboutUsSection">
-            <p>
-              The Idea of teaching kids who really need help with their
-              acadamics came from analysing hardworking students, who wanted
-              more than what college provides, while maintaining their
-              work/study schedule. Had been in the same shoes, the CEO felt the
-              neccesity to find a way and provide FREE acadamic HELP. Our Tutors
-              are Gradutated from well established/known Colleges/Universities
-              with more than 3.5 GPA or Honor
-            </p>
+          <div class="textSection">
+            <div class="aboutUsSection">
+              <p>
+                The Idea of teaching kids who really need help with their
+                acadamics came from analysing hardworking students, who wanted
+                more than what college provides, while maintaining their
+                work/study schedule. Had been in the same shoes, the CEO felt
+                the neccesity to find a way and provide FREE acadamic HELP. Our
+                Tutors are Gradutated from well established/known
+                Colleges/Universities with more than 3.5 GPA or Honor
+              </p>
+            </div>
           </div>
         </template>
       </b-carousel-slide>
@@ -58,13 +58,13 @@ export default {
 .carousel-caption {
   position: absolute;
   padding: 0px;
-  margin: 30% 0%;
   z-index: 10;
   color: #fff;
   text-align: center;
   right: 10%;
   bottom: 20px;
   left: 10%;
+  top: 0;
 }
 
 img {
@@ -79,18 +79,7 @@ img {
   padding: 10px 0px;
   margin: 20% 40%;
 }
-.problemTextSection {
-  font-size: 3rem;
-  color: #e8e8e8;
-  font-family: "Walter Turncoat";
-  display: block;
-  width: 80%;
-  height: 80%;
-  min-height: auto;
-  margin: 30px auto 0 auto;
-  padding: 20px 30px;
-}
-.AboutUsSection {
+.textSection {
   font-size: 2rem;
   color: #e8e8e8;
   font-family: "Walter Turncoat";
@@ -102,6 +91,16 @@ img {
   padding: 20px 30px;
 }
 
+.aboutUsSection {
+  padding-top: 30px;
+}
+
+@include media-breakpoint-down(md) {
+  .aboutUsSection {
+    font-size: 1rem;
+    padding: 20px;
+  }
+}
 .carousel-control-prev,
 .carousel-control-next {
   background: rgba(132, 235, 253, 0.3);
