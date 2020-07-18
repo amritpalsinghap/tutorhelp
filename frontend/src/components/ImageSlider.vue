@@ -95,9 +95,9 @@ img {
   padding-top: 30px;
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(lg) {
   .aboutUsSection {
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 20px;
   }
 }
