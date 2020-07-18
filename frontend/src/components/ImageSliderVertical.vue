@@ -6,7 +6,7 @@
     <div class="page1"></div>
     <div class="page2">
       <div id="teachingSection">
-        <p class="problemTextSection">
+        <p class="textSection">
           Got a EXAM ! <br />
           STUCK some where !
         </p>
@@ -23,16 +23,18 @@
       </div>
     </div>
     <div class="page3">
-      <div class="problemTextSection">
-        <p>
-          The Idea of teaching kids who really need help with their acadamics
-          came from analysing hardworking students, who wanted more than what
-          college provides, while maintaining their work/study schedule. Had
-          been in the same shoes, the CEO felt the neccesity to find a way and
-          provide FREE acadamic HELP. Our Tutors are Gradutated from well
-          established/known Colleges/Universities with more than 3.5 GPA or
-          Honor
-        </p>
+      <div class="textSection">
+        <div class="aboutUsSection">
+          <p>
+            The Idea of teaching kids who really need help with their acadamics
+            came from analysing hardworking students, who wanted more than what
+            college provides, while maintaining their work/study schedule. Had
+            been in the same shoes, the CEO felt the neccesity to find a way and
+            provide FREE acadamic HELP. Our Tutors are Gradutated from well
+            established/known Colleges/Universities with more than 3.5 GPA or
+            Honor
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -67,7 +69,7 @@ export default {};
   text-align: center;
   padding: 10px 0px;
 }
-.problemTextSection {
+.textSection { 
   font-size: 1rem;
   color: #e8e8e8;
   font-family: "Walter Turncoat";
@@ -75,7 +77,11 @@ export default {};
   width: 80%;
   height: 80%;
   min-height: auto;
-  padding: 20px 30px;
+}
+
+.aboutUsSection {
+  font-size: 1.2rem;
+  padding: 20px;
 }
 
 img {
