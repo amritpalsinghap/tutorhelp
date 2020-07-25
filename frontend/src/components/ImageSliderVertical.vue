@@ -11,8 +11,8 @@
           STUCK some where !
         </p>
         <div class="SubmitProblemButton">
-          <router-link to="/submitRequest">
-            <button class="btn ">
+          <router-link to="/submitRequest" class="btn ">
+            <button class="btn submitBtn">
               <img
                 src="../assets/submitProblemButton.svg"
                 alt="SubmitProblemButton"
@@ -25,22 +25,29 @@
     <div class="page3">
       <div class="textSection">
         <div class="aboutUsSection">
-          <p>
-            The Idea of teaching kids who really need help with their acadamics
-            came from analysing hardworking students, who wanted more than what
-            college provides, while maintaining their work/study schedule. Had
-            been in the same shoes, the CEO felt the neccesity to find a way and
-            provide FREE acadamic HELP. Our Tutors are Gradutated from well
-            established/known Colleges/Universities with more than 3.5 GPA or
-            Honor
-          </p>
+          <textarea
+            class="aboutUsArea"
+            rows="20"
+            cols="25"
+            type="text"
+            v-model="text"
+          >
+          </textarea>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-export default {};
+import myJSON from "@/components/Global/aboutUs.json";
+var textObj = JSON.stringify(myJSON.aboutUs);
+export default {
+  data() {
+    return {
+      text: textObj,
+    };
+  },
+};
 </script>
 <style lang="scss" scoped>
 .page1 {
@@ -61,22 +68,35 @@ export default {};
   width: 100%;
   height: 730px;
 }
-.SubmitProblemButtonmb {
-  padding: 140% 60%;
+.submitBtn {
+  margin-top: 270px;
+  margin-left: 45px;
+}
+img {
+  width: 7rem;
 }
 .SubmitProblemButton {
   position: absolute;
   text-align: center;
   padding: 10px 0px;
 }
-.textSection { 
-  font-size: 1rem;
+.textSection {
+  font-size: 2rem;
   color: #e8e8e8;
   font-family: "Walter Turncoat";
   display: block;
   width: 80%;
   height: 80%;
   min-height: auto;
+  margin: 0px;
+}
+
+.aboutUsArea {
+  margin-top: 40px;
+  margin-left: 12px;
+  color: white;
+  background: transparent;
+  border: transparent;
 }
 
 .aboutUsSection {
@@ -84,9 +104,6 @@ export default {};
   padding: 20px;
 }
 
-img {
-  width: 5rem;
-}
 .page3 {
   background: url("../assets/backgroundImageAboutUsVertical.svg") no-repeat;
   -webkit-background-size: cover;
