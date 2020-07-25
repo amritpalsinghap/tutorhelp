@@ -30,7 +30,7 @@
           <div class="textSection">
             <div class="aboutUsSection">
               <p>
-                The Idea of teaching kids who really need help with their
+                The Idea of teaching students who really need help with their
                 acadamics came from analysing hardworking students, who wanted
                 more than what college provides, while maintaining their
                 work/study schedule. Had been in the same shoes, the CEO felt
@@ -80,7 +80,7 @@ img {
   margin: 20% 40%;
 }
 .textSection {
-  font-size: 2rem;
+  font-size: 3rem;
   color: #e8e8e8;
   font-family: "Walter Turncoat";
   display: block;
@@ -93,6 +93,7 @@ img {
 
 .aboutUsSection {
   padding-top: 30px;
+  font-size: 2rem;
 }
 
 @include media-breakpoint-down(lg) {
