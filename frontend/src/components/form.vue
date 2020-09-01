@@ -32,7 +32,7 @@
           v-model="selectedLanguage"
           :options="options"
           required
-          class="inputTextBox"
+          class="mt-3"
         ></b-form-select>
       </b-form-group>
       <b-form-group id="input-group-4" label-for="input-4">
@@ -61,7 +61,7 @@
       >
       <b-button type="reset" variant="danger" class="cstm-btn">Reset</b-button>
       <br />
-      <label class="info">The information you provide will stay private</label>
+      <label class="info">*The information you provide will stay private</label>
     </b-form>
   </div>
 </template>
@@ -143,7 +143,7 @@ export default {
 .inputTextBox {
   display: block;
   width: 100%;
-  background: #f2f2f2;
+
   //color attribute added only for the select tag option, the text color wasn't picking up the inherit option.
   color: #757474;
   border-radius: 3px;
@@ -157,5 +157,16 @@ export default {
 .cstm-btn {
   margin-top: 5px;
   margin-right: 10px;
+}
+.mt-3 {
+  margin-top: 1rem !important;
+  font-family: sans-serif;
+  width: 100%;
+
+  color: #757474;
+  border-radius: 3px;
+  font-size: 15px;
+  line-height: 1.2;
+  display: block;
 }
 </style>
