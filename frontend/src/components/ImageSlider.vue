@@ -102,6 +102,11 @@ img {
     padding: 20px;
   }
 }
+@include media-breakpoint-down(lg) {
+  .textSection {
+    font-size: 2rem;
+  }
+}
 .carousel-control-prev,
 .carousel-control-next {
   background: rgba(132, 235, 253, 0.3);
