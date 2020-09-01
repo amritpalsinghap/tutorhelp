@@ -26,11 +26,13 @@
       <div class="textSection">
         <div class="aboutUsSection">
           <textarea
+            id="textarea-no-resize"
             class="aboutUsArea"
             rows="20"
             cols="25"
-            type="text"
             v-model="text"
+            readonly
+            no-resize
           >
           </textarea>
         </div>
@@ -93,7 +95,7 @@ img {
 
 .aboutUsArea {
   margin-top: 40px;
-  margin-left: 12px;
+  margin-left: 5px;
   color: white;
   background: transparent;
   border: transparent;
