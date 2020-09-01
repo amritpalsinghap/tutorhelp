@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="submissionaPage">
     <b-container fluid="sm">
       <b-row
         id="popupsection"
@@ -33,6 +33,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "src/custom.scss";
+
+.submissionaPage {
+  background-color: #00d0d0;
+}
+
 .img-section {
   @include media-breakpoint-down(md) {
     width: auto;
