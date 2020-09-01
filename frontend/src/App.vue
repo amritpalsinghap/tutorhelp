@@ -9,15 +9,18 @@
 import cstmModal from "@/components/ModalTest";
 export default {
   name: "App",
-  components:{
-    cstmModal
-  }
+  components: {
+    cstmModal,
+  },
 };
 </script>
 
-<style style lang="scss" scoped>
+<style style lang="scss">
 body,
 html {
+  background-color: #00d0d0;
   font-family: "Franklin Gothic Medium", "Arial Narrow", "Arial", "sans-serif";
 }
+
+
 </style>
