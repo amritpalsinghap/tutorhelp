@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="HomePage">
     <div class="imageslider">
       <cstmimageslider></cstmimageslider>
     </div>
