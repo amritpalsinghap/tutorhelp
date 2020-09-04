@@ -1,6 +1,12 @@
 <template>
   <div class="imageSliderSection">
-    <b-carousel id="carousel-animation" :interval="50000" controls indicators>
+    <b-carousel
+      id="carousel-animation"
+      :interval="50000"
+      controls
+      indicators
+      ref="myCarousel"
+    >
       <!-- Text slides with image -->
       <b-carousel-slide
         img-src="../assets/backgroundImageLanguageList.svg"
@@ -49,6 +55,22 @@
 <script>
 export default {
   name: "imageSlide",
+  props: {
+    SlideIndex: {
+      type: Number,
+      default: 0,
+      required: false,
+      validator: function(value) {
+        return value >= 0 && value <= 2;
+      },
+    },
+  },
+  mounted: function() {
+    if (this.SlideIndex != 0) {
+      this.$refs.myCarousel.setSlide(this.SlideIndex);
+      return console.log("slideIndex", this.SlideIndex);
+    }
+  },
 };
 </script>
 <style lang="scss">
