@@ -12,8 +12,13 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item to="/submitRequest" class="btn btn-2">SubmitProblem</b-nav-item>
-          <b-nav-item to="/about" class="btn btn-2">About us</b-nav-item>
+          <b-nav-item to="/" class="btn btn-2">Home</b-nav-item>
+          <b-nav-item to="/submitRequest" class="btn btn-2"
+            >SubmitProblem</b-nav-item
+          >
+          <b-nav-item @click="goToAboutUsSlide" class="btn btn-2"
+            >About us</b-nav-item
+          >
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -26,6 +31,15 @@ export default {
   components: {
     cstmGoBackBtn,
   },
+  methods: {
+    goToAboutUsSlide() {
+      //1 if not on home page -> route to home page
+      //2 set SlideIndex prop
+      if (this.$route.name != "Home") {
+        this.$router.push({ path: "/", params: { SlideIndex: "2" } });
+      }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -36,8 +50,13 @@ export default {
     overflow: hidden;
     position: fixed;
     width: 100%;
-    padding-left:0;
-    padding-right:0;
+    padding-left: 0;
+    padding-right: 0;
+    z-index: 1;
+  }
+
+  .navbar-collapse[data-v-6d3345fc] {
+    background: #125762;
   }
 }
 @include media-breakpoint-up(lg) {
