@@ -17,7 +17,7 @@
         <template>
           <div class="teachingSection">
             <p class="textSection">
-              Got a EXAM ! <br />
+              Got an Assignment ! <br />
               STUCK some where !
             </p>
             <div class="SubmitProblemButton">
