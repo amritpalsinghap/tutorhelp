@@ -8,9 +8,9 @@
       ref="myCarousel"
     >
       <!-- Text slides with image -->
-      <b-carousel-slide
-        img-src="../assets/backgroundImageLanguageList.svg"
-      ></b-carousel-slide>
+      <b-carousel-slide img-src="../assets/backgroundImageLanguageList.svg">{{
+        SlideIndex
+      }}</b-carousel-slide>
 
       <!-- Slides with custom text -->
       <b-carousel-slide img-src="../assets/backgroundImageTeaching.svg">
@@ -53,23 +53,46 @@
 </template>
 
 <script>
+import { store } from "../store.js";
 export default {
   name: "imageSlide",
-  props: {
-    SlideIndex: {
-      type: Number,
-      default: 0,
-      required: false,
-      validator: function(value) {
-        return value >= 0 && value <= 2;
-      },
-    },
+  data() {
+    return {
+      SlideIndex: store.state.SlideIndex,
+    };
   },
   mounted: function() {
-    if (this.SlideIndex != 0) {
+    this.$nextTick(function() {
       this.$refs.myCarousel.setSlide(this.SlideIndex);
-      return console.log("slideIndex", this.SlideIndex);
-    }
+      console.log("SlideIndex in image slider: ", this.SlideIndex);
+    });
+  },
+  computed: {
+    SlideIndexValue() {
+      console.log(
+        "Component : ImageSlider \n  in Computed returning Slideindex"
+      );
+      return store.state.SlideIndex;
+    },
+  },
+  watch: {
+    // whenever question changes, this function will run
+    SlideIndexValue(newSlideIndexValue, oldSlideIndexValue) {
+      // this.$forceUpdate();
+      console.log(
+        "Component : ImageSlider \n in Watcher: SlideIndex  value : ",
+        this.SlideIndex,
+        "\n new SlideIndexValue: ",
+        newSlideIndexValue,
+        "\n old SlideIndexValue : ",
+        oldSlideIndexValue
+      );
+    },
+  },
+  beforeDestroy: function() {
+    this.$nextTick(function() {
+      store.setSlideIndex(0);
+    });
   },
 };
 </script>
