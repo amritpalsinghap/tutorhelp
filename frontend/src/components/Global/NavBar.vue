@@ -2,7 +2,7 @@
   <div>
     <b-navbar class="navArea" toggleable="md" type="dark" variant="info">
       <cstmGoBackBtn></cstmGoBackBtn>
-      <b-navbar-brand to="/" class="logobtn">
+      <b-navbar-brand to="/" @click="setSlideIndexValue(0)" class="logobtn">
         <img
           src="../../assets/Logo.svg"
           class="logoSize d-inline-block align-top"
@@ -12,7 +12,9 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item to="/" class="btn btn-2">Home</b-nav-item>
+          <b-nav-item to="/" @click="setSlideIndexValue(0)" class="btn btn-2"
+            >Home</b-nav-item
+          >
           <b-nav-item to="/submitRequest" class="btn btn-2"
             >SubmitProblem</b-nav-item
           >
@@ -26,6 +28,7 @@
 </template>
 <script>
 import cstmGoBackBtn from "@/components/Global/GoBack";
+import { store } from "../../store.js";
 export default {
   name: "NavBar",
   components: {
@@ -34,10 +37,16 @@ export default {
   methods: {
     goToAboutUsSlide() {
       //1 if not on home page -> route to home page
-      //2 set SlideIndex prop
+
       if (this.$route.name != "Home") {
-        this.$router.push({ path: "/", params: { SlideIndex: "2" } });
+        //2 set state "SlideIndex"  = 2
+        this.$router.push({ path: "/" });
       }
+      this.setSlideIndexValue(2);
+    },
+    setSlideIndexValue(newValue) {
+      store.setSlideIndex(newValue);
+      
     },
   },
 };
