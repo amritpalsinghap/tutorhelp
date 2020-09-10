@@ -7,7 +7,7 @@
     <div class="page2">
       <div id="teachingSection">
         <p class="textSection">
-          Got a EXAM ! <br />
+          Got an Assignment ! <br />
           STUCK some where !
         </p>
         <div class="SubmitProblemButton">
