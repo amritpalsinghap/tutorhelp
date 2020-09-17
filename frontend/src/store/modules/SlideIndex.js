@@ -4,19 +4,21 @@ const state = {
 };
 //getters
 const getters = {
-  slideIndexValue: (state) => {
+  getSlideIndex: () => {
     return state.SlideIndex;
   },
 };
 
 //actions
 const actions = {
-  SlideIndex(commit, slideIndexValue, callback) {
+  SlideIndex({ commit }, slideIndexValue) {
     if (slideIndexValue >= 0 && slideIndexValue <= 2) {
+      // mutating SlideIndex value
       commit("setSlideIndex", slideIndexValue);
-      callback("slideIndex Set to : ", slideIndexValue);
+      // callback("slideIndex Set to : ", slideIndexValue);
     } else {
-      callback("ERROR while setting the slideIndex");
+      // callback("ERROR while setting the slideIndex");
+      console.log("SlideIndex value change Successfully");
     }
   },
 };
@@ -30,18 +32,8 @@ const mutations = {
 
 //export
 export default {
-  namespaced: true,
   state,
   getters,
   actions,
   mutations,
 };
-
-// setSlideIndex(newValue) {
-//   if (this.debug) console.log("setSlideIndex triggered with", newValue);
-//   this.state.SlideIndex = newValue;
-// }
-// clearSlideIndex() {
-//   if (this.debug) console.log("clearSlideIndex triggered");
-//   this.state.SlideIndex = "";
-// }
