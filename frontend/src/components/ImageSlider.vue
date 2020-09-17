@@ -9,7 +9,7 @@
     >
       <!-- Text slides with image -->
       <b-carousel-slide img-src="../assets/backgroundImageLanguageList.svg">{{
-        SlideIndex
+        slideIndex
       }}</b-carousel-slide>
 
       <!-- Slides with custom text -->
@@ -53,47 +53,60 @@
 </template>
 
 <script>
-import { store } from "../store.js";
+import { mapGetters, mapState } from "vuex";
 export default {
   name: "imageSlide",
-  data() {
-    return {
-      SlideIndex: store.state.SlideIndex,
-    };
-  },
-  mounted: function() {
-    this.$nextTick(function() {
-      this.$refs.myCarousel.setSlide(this.SlideIndex);
-      console.log("SlideIndex in image slider: ", this.SlideIndex);
-    });
-  },
   computed: {
-    SlideIndexValue() {
-      console.log(
-        "Component : ImageSlider \n  in Computed returning Slideindex"
-      );
-      return store.state.SlideIndex;
+    ...mapState({
+      slideIndex: (state) => state.SlideIndex,
+    }),
+    ...mapGetters({
+      slideIndex: "getSlideIndex",
+    }),
+  },
+  methods: {
+    changeSlideTo(value) {
+      this.$refs.myCarousel.setSlide(value);
     },
   },
-  watch: {
-    // whenever question changes, this function will run
-    SlideIndexValue(newSlideIndexValue, oldSlideIndexValue) {
-      // this.$forceUpdate();
-      console.log(
-        "Component : ImageSlider \n in Watcher: SlideIndex  value : ",
-        this.SlideIndex,
-        "\n new SlideIndexValue: ",
-        newSlideIndexValue,
-        "\n old SlideIndexValue : ",
-        oldSlideIndexValue
-      );
-    },
-  },
-  beforeDestroy: function() {
-    this.$nextTick(function() {
-      store.setSlideIndex(0);
-    });
-  },
+  // data() {
+  //   return {
+  //     SlideIndex: store.state.SlideIndex,
+  //   };
+  // },
+  // computed: {
+  //   SlideIndexValue() {
+  //     console.log(
+  //       "Component : ImageSlider \n  in Computed returning Slideindex"
+  //     );
+  //     return store.state.SlideIndex;
+  //   },
+  // },
+  // mounted: function() {
+  //   this.$nextTick(function() {
+  //     this.$refs.myCarousel.setSlide(this.SlideIndex);
+  //     console.log("SlideIndex in image slider: ", this.SlideIndex);
+  //   });
+  // },
+  // watch: {
+  //   // whenever question changes, this function will run
+  //   SlideIndexValue(newSlideIndexValue, oldSlideIndexValue) {
+  //     // this.$forceUpdate();
+  //     console.log(
+  //       "Component : ImageSlider \n in Watcher: SlideIndex  value : ",
+  //       this.SlideIndex,
+  //       "\n new SlideIndexValue: ",
+  //       newSlideIndexValue,
+  //       "\n old SlideIndexValue : ",
+  //       oldSlideIndexValue
+  //     );
+  //   },
+  // },
+  // beforeDestroy: function() {
+  //   this.$nextTick(function() {
+  //     store.setSlideIndex(0);
+  //   });
+  // },
 };
 </script>
 <style lang="scss">
