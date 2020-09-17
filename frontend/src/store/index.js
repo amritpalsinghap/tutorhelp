@@ -1,8 +1,8 @@
 import Vue from "vue";
-import vuex from "vuex";
+import Vuex from "vuex";
 import slideIndex from "./modules/SlideIndex";
 
-Vue.use(vuex);
+Vue.use(Vuex);
 
 const debug = process.env.NODE_ENV !== "production";
 
