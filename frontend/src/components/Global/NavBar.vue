@@ -2,7 +2,7 @@
   <div>
     <b-navbar class="navArea" toggleable="md" type="dark" variant="info">
       <cstmGoBackBtn></cstmGoBackBtn>
-      <b-navbar-brand to="/" @click="setSlideIndexValue(0)" class="logobtn">
+      <b-navbar-brand to="/" @click="setSlideIndex(0)" class="logobtn">
         <img
           src="../../assets/Logo.svg"
           class="logoSize d-inline-block align-top"
@@ -12,13 +12,13 @@
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
-          <b-nav-item to="/" @click="setSlideIndexValue(0)" class="btn btn-2"
+          <b-nav-item to="/" class="btn btn-2" @click="setSlideIndex(0)"
             >Home</b-nav-item
           >
           <b-nav-item to="/submitRequest" class="btn btn-2"
             >SubmitProblem</b-nav-item
           >
-          <b-nav-item @click="goToAboutUsSlide" class="btn btn-2"
+          <b-nav-item @click="setSlideIndex(2)" class="btn btn-2"
             >About us</b-nav-item
           >
         </b-navbar-nav>
@@ -28,27 +28,13 @@
 </template>
 <script>
 import cstmGoBackBtn from "@/components/Global/GoBack";
-import { store } from "../../store.js";
+import { mapActions } from "vuex";
 export default {
   name: "NavBar",
   components: {
     cstmGoBackBtn,
   },
-  methods: {
-    goToAboutUsSlide() {
-      //1 if not on home page -> route to home page
-
-      if (this.$route.name != "Home") {
-        //2 set state "SlideIndex"  = 2
-        this.$router.push({ path: "/" });
-      }
-      this.setSlideIndexValue(2);
-    },
-    setSlideIndexValue(newValue) {
-      store.setSlideIndex(newValue);
-      
-    },
-  },
+  methods: mapActions({ setSlideIndex: "SlideIndex" }),
 };
 </script>
 <style lang="scss" scoped>
