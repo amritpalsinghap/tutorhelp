@@ -23,7 +23,7 @@
   </div>
 </template>
 <script>
-import cstmForm from "@/components/form";
+import cstmForm from "@/components/Form";
 export default {
   name: "Submission",
   components: {
