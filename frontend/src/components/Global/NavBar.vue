@@ -18,7 +18,7 @@
           <b-nav-item to="/submitRequest" class="btn btn-2"
             >SubmitProblem</b-nav-item
           >
-          <b-nav-item @click="setSlideIndex(2)" class="btn btn-2"
+          <b-nav-item to="/" @click="setSlideIndex(2)" class="btn btn-2"
             >About us</b-nav-item
           >
         </b-navbar-nav>
