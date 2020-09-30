@@ -35,6 +35,8 @@
         <template>
           <div class="textSection">
             <div class="aboutUsSection">
+              <h2>About Us:</h2>
+              <br />
               <p>
                 The Idea of teaching students who really need help with their
                 acadamics came from analysing hardworking students, who wanted
@@ -53,21 +55,38 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
 export default {
   name: "imageSlide",
+  data() {
+    return {
+      slideIndex: this.$store.state.slideIndex.SlideIndex,
+    };
+  },
+  created: function() {
+    this.$nextTick(function() {
+      this.$refs.myCarousel.setSlide(this.$store.state.slideIndex.SlideIndex);
+      console.log(
+        "SlideIndex in image slider created prop: ",
+        this.$store.state.slideIndex.SlideIndex
+      );
+    });
+  },
   computed: {
-    ...mapState({
-      slideIndex: (state) => state.SlideIndex,
-    }),
-    ...mapGetters({
-      slideIndex: "getSlideIndex",
-    }),
+    changeslide() {
+      this.$refs.myCarousel.setSlide(this.slideIndex);
+      return console.log(
+        "SlideIndex in image slider computed prop: ",
+        this.slideIndex
+      );
+    },
   },
   methods: {
     changeSlideTo(value) {
       this.$refs.myCarousel.setSlide(value);
     },
+  },
+  beforeCreate() {
+    this.$forceUpdate();
   },
   // data() {
   //   return {
@@ -81,12 +100,6 @@ export default {
   //     );
   //     return store.state.SlideIndex;
   //   },
-  // },
-  // mounted: function() {
-  //   this.$nextTick(function() {
-  //     this.$refs.myCarousel.setSlide(this.SlideIndex);
-  //     console.log("SlideIndex in image slider: ", this.SlideIndex);
-  //   });
   // },
   // watch: {
   //   // whenever question changes, this function will run
